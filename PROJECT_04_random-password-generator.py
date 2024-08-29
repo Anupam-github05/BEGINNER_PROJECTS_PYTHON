@@ -33,4 +33,4 @@ print ("Your password is : "+password+" \n\n\n")
 
 
 # one more problem of this tipe of logic is that it will generate the password like ARYCCugdt$#@8083 which is easy target for hackers as the sequence of upper case, lower case, spcl
-# characters and numbers appearing is known. So for easy level, this is acceptable, for for real use, 
+# characters and numbers appearing is known. So for easy level, this is acceptable, for for real use, the above mentioned source code is the best!!!!
