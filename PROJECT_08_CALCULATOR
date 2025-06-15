@@ -1,0 +1,67 @@
+#first printing the ascii art for the calculator
+import os
+choice = "yes"
+while choice !="no":
+    def clear_screen():
+        if os.name == "nt":  # For Windows
+            os.system("cls")
+        else:  # For macOS and Linux
+            os.system("clear")
+    print ('''
+                888                888        888                              
+                888                888        888                   
+                888                888        888                   
+ .d8888b 8888b. 888 .d8888b888  888888 8888b. 888888 .d88b. 888d888 
+d88P"       "88b888d88P"   888  888888    "88b888   d88""88b888P"   
+888     .d888888888888     888  888888.d888888888   888  888888     
+Y88b.   888  888888Y88b.   Y88b 888888888  888Y88b. Y88..88P888     
+ "Y8888P"Y888888888 "Y8888P "Y88888888"Y888888 "Y888 "Y88P" 888     
+ 
+_______________________
+|  _________________  |
+| | JO           0. | |
+| |_________________| |
+|  ___ ___ ___   ___  |
+| | 7 | 8 | 9 | | + | |
+| |___|___|___| |___| |
+| | 4 | 5 | 6 | | - | |
+| |___|___|___| |___| |
+| | 1 | 2 | 3 | | x | |
+| |___|___|___| |___| |
+| | . | 0 | = | | / | |
+| |___|___|___| |___| |
+|_____________________|''')
+    def add(x , y):
+        return x+y
+    def substract(x , y):
+        return x-y
+    def multiply(x , y):
+        return x*y
+    def divide(x , y):
+        return x/y
+    operations = {
+        '+' : add,
+        '-' : substract,
+        '*' : multiply,
+        '/' : divide
+    }
+    num1 = float(input ("Enter the first number: "))
+    num2 = float(input ("Enter the second number: "))
+    operator  = input ("Enter the operation you want to perform.... i.e. enter '+' to add, '-' to substract, '*' to multiply and '/' to divide \n").strip()
+    if operator in operations:
+        result = operations[operator](num1, num2)
+        print (f"The desired result is : {result}")
+    else:
+        print ("Invalid operator!")
+    while choice in ["yes", "no"]:
+        choice = input("Enter 'yes' to try again and 'no' to exit: ").lower()
+        if choice == "yes":
+            clear_screen()
+            break
+        elif choice == "no":
+            print("Thankyou for using the calculator!")
+            break
+        else:
+            print("Invalid input! Please enter 'yes' or 'no'.")
+            choice = "yes"
+            continue
